@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1001,
+    "firstName": "John",
+    "lastName": "Doe",
+    "company": "Google",
+    "email": "john.doe@example.com"
+  },
+  {
+    "id": 1002,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "company": "Samsung Inc.",
+    "email": "jane.smith@example.com"
+  },
+  {
+    "id": 1003,
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "company": "Microsoft",
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "id": 1004,
+    "firstName": "Bob",
+    "lastName": "Williams",
+    "company": "Apple Inc.",
+    "email": "bob.williams@example.com"
+  },
+  {
+    "id": 1005,
+    "firstName": "Charlie",
+    "lastName": "Brown",
+    "company": "Tesla",
+    "email": "charlie.brown@example.com"
+  },
+  {
+    "id": 1006,
+    "firstName": "David",
+    "lastName": "Miller",
+    "company": "Amazon",
+    "email": "david.miller@example.com"
+  },
+  {
+    "id": 1007,
+    "firstName": "Eva",
+    "lastName": "Davis",
+    "company": "Facebook",
+    "email": "eva.davis@example.com"
+  },
+  {
+    "id": 1008,
+    "firstName": "Frank",
+    "lastName": "White",
+    "company": "Twitter",
+    "email": "frank.white@example.com"
+  },
+  {
+    "id": 1009,
+    "firstName": "John",
+    "lastName": "Doe",
+    "company": "Google",
+    "email": "john.doe@example.com"
+  },
+  {
+    "id": 1010,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "company": "Samsung Inc.",
+    "email": "jane.smith@example.com"
+  },
+  {
+    "id": 1011,
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "company": "Microsoft",
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "id": 1012,
+    "firstName": "Bob",
+    "lastName": "Williams",
+    "company": "Apple Inc.",
+    "email": "bob.williams@example.com"
+  }
+]

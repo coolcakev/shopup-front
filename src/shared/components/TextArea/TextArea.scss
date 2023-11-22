@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+
+.textarea {
+  width: 100%;
+  height: auto;
+  padding: 16px;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  background-color: $-lightgray-b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  resize: none;
+
+  &::placeholder {
+    color: #4D565C;
+  }
+
+  &:active {
+    outline: none;
+  }
+}

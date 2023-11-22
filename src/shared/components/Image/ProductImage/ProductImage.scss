@@ -1,0 +1,38 @@
+.product-image-container {
+  width: 188px;
+  height: 166px;
+  border-radius: 16px;
+  position: relative;
+
+  .img-product {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .icon-container {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #F0F0F0;
+    position: absolute;
+    top: 4px;
+    cursor: pointer;
+  }
+
+  .icon-trash {
+    left: 4px;
+  }
+
+  .icon-edit {
+    right: 4px;
+  }
+
+  .img-trash, .img-edit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

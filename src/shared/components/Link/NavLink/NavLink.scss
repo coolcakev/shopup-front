@@ -1,0 +1,22 @@
+@import '../../../../styles/variables';
+
+.nav-link {
+  height: 52px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 64px;
+  text-align: left;
+  background-color: $-secondary;
+  color: $-lightgray-b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.active {
+    background-color: $-primary;
+  }
+}

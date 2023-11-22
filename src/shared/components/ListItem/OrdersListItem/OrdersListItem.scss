@@ -1,0 +1,51 @@
+@import '../../../../styles/variables.scss';
+
+.orders-row {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+
+  .order-client {
+    height: 26px;
+    margin-bottom: 20px;
+    display: flex;
+
+    .order-column {
+      width: 193px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 26px;
+    }
+  }
+  
+  .order-purchase {
+    display: flex;
+    height: 72px;
+
+    .order-image {
+      width: 72px;
+      height: 72px;
+      border-radius: 8px;
+    }
+
+    .order-summary {
+      margin: 14.5px 0 14.5px 12px;
+
+      .order-price {
+        margin-bottom: 4px;
+        color: $-primary;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 19px;
+      }
+
+      .order-product {
+        color: $-secondary;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 10px;
+      }
+    }
+  }
+}

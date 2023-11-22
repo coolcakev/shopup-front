@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-form {
+    width: 600px;
+    height: 347px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    .form-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}

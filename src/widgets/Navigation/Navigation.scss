@@ -1,0 +1,21 @@
+.nav-container {
+  width: 357px;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FBFBFB;
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1; 
+  }
+}
+
+.nav-button {
+  position: sticky;
+  bottom: 40px;
+}

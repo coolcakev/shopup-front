@@ -1,0 +1,104 @@
+@import '../../styles/variables.scss';
+
+.modal-products {
+  width: 570px;
+  height: 570px;
+  display: flex;
+  flex-direction: column;
+
+  .modal-pictures {
+    height: 290px;
+    display: flex;
+    gap: 10px;
+
+    .plus-button, .prim-image {
+      width: 290px;
+      height: 100%;
+    }
+
+    .plus-button img {
+      width: 52px;
+      height: 52px;
+    }
+
+    .prim-image {
+      overflow: hidden;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .pictures-small {
+      width: 290px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      .plus-button {
+        width: 89px;
+        height: 89px;
+        border-radius: 16px;
+
+        img {
+          width: 52px;
+          height: 52px;
+        }
+      }
+
+      .img-extra {
+        overflow: hidden;
+        object-fit: cover;
+        width: 89px;
+        height: 89px;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  .modal-inputs {
+    margin-top: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .inputs-main {
+      width: 100%;
+      height: 48px;
+      display: flex;
+      gap: 12px;
+
+      .price-input, .name-input {
+        height: 100%;
+      }
+
+      .price-input {
+        max-width: 150px;
+      }
+
+      .name-input {
+        flex-grow: 1
+      }
+    }
+
+    .desc-input {
+      width: 100%;
+      flex-grow: 1;
+      border-radius: 18px;
+      text-wrap: wrap;
+    }
+  }
+
+  .submit-button {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    gap: 12px;
+
+    .submit-button:hover {
+      background-color: $-secondary;
+    }
+  }
+}

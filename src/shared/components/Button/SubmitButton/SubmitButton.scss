@@ -1,0 +1,18 @@
+@import '../../../../styles/variables';
+
+.submit-button {
+  height: 52px;
+  padding: 12px;
+  border-radius: 64px;
+  text-align: center;
+  background-color: $-primary;
+  color: $-lightgray-c;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

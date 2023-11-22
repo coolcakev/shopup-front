@@ -1,0 +1,11 @@
+.template-page {
+  min-height: 100vh;
+  display: flex;
+
+  .page-container {
+    width: 1083px;
+    padding: 40px;
+    background-color: #F0F0F0;
+    flex: 1;
+  }
+}
