@@ -3,29 +3,19 @@ import './ProductsPage.scss';
 import TemplatePage from '../TemplatePage/TemplatePage';
 import ProductCard from '../../widgets/ProductCard/ProductCard';
 import PlusButton from '../../shared/components/Button/PlusButton/PlusButton';
-import { IProduct, emptyProduct } from '../../entities/Product/product.models';
+import {IProduct, emptyProduct, GetAllProductResponse} from '../../entities/Product/product.models';
 import ModalProducts from '../../widgets/ModalProducts/ModalProducts';
-import ModalEditProduct from '../../widgets/ModalProducts/ModalEditProduct/ModalEditProduct';
 import { useGetProductsQuery, useAddProductMutation, useDeleteProductMutation } from '../../entities/Product/api/productApi';
 
 const ProductsPage = () => {
   const [isNewModalVisible, setNewModalVisible] = useState(false);
   const [isEditModalVisible, setEditModalVisible] = useState(false);
-  const [productToEdit, setProductToEdit] = useState<IProduct>(emptyProduct);
-  const [productsBack, setProductsBack] = useState<IProduct[]>([]);
+  const [productToEdit, setProductToEdit] = useState<GetAllProductResponse>(emptyProduct);
   const { data: productsBackData } = useGetProductsQuery();
   const [addProductMutation] = useAddProductMutation();
   const [deleteProductMutation] = useDeleteProductMutation();
 
-  useEffect(() => {
-    if (productsBackData) {
-      setProductsBack(productsBackData);
-    }
-  }, [productsBackData]);
-
   const deleteProduct = (productId?: string) => {
-    const updatedProducts = productsBack.filter((product: IProduct) => product._id !== productId);
-    setProductsBack(updatedProducts);
     setEditModalVisible(false);
     productId && deleteProductMutation(productId);
   };
@@ -38,25 +28,6 @@ const ProductsPage = () => {
     setEditModalVisible(!isEditModalVisible);
   }
 
-  const handleChangeProduct = (product: IProduct) => {
-    const updatedProducts = [...productsBack, { _id: productsBack.length.toString(), ...product }];
-    setProductsBack(updatedProducts);
-  } 
-
-  const handleAddProduct = (product: IProduct) => {
-    let formData = new FormData();
-    formData.append("name", product.name);
-    formData.append("price", product.price.toString());
-    if (product.description) formData.append("description", product.description);
-    for (let i = 0; i < product.images.length; i++) {
-      formData.append("files", product.images[i]);
-    };
-
-    handleChangeProduct(product);  
-    addProductMutation(formData).unwrap();
-    toggleNewProductModal();
-  }
-
   const handleEditProduct = async (product: IProduct) => {
     let formData = new FormData();
     formData.append("name", product.name);
@@ -67,11 +38,10 @@ const ProductsPage = () => {
     };
     formData.append("productId", productToEdit._id!);
     addProductMutation(formData).unwrap();
-    setProductsBack(productsBackData);
     toggleEditProductModal();
   };
 
-  const handleOpenEditModal = (product: IProduct) => {
+  const handleOpenEditModal = (product: GetAllProductResponse) => {
     setProductToEdit(product);
     setEditModalVisible(true);
   }
@@ -81,27 +51,27 @@ const ProductsPage = () => {
       <TemplatePage title="Products">
         <div className="products-grid">
           <PlusButton onClick={toggleNewProductModal} />
-          {productsBack.map((product: any) => (
+          {productsBackData?.map((product) => (
             <ProductCard 
               key={product._id} 
               onDelete={() => deleteProduct(product._id)}
               onEditClick={() => handleOpenEditModal(product)}
-              {...product} 
+              image={product.images[0]?.link}
+              name={product.name}
+              price={product.price}
             />
           ))}
         </div>
         {isNewModalVisible && 
           <ModalProducts 
-            onClose={toggleNewProductModal} 
-            onAddProduct={handleAddProduct} 
+            onClose={toggleNewProductModal}
           />}
-        {isEditModalVisible && 
-          <ModalEditProduct 
-            onClose={() => toggleEditProductModal()} 
-            onEditProduct={handleEditProduct} 
-            onDeleteProduct={() => deleteProduct(productToEdit._id)}
-            productData={productToEdit}
-          />}
+        {isEditModalVisible &&
+            <ModalProducts
+              onClose={() => toggleEditProductModal()}
+              productToEdit={productToEdit}
+            />
+          }
       </TemplatePage>
     </div>
   );

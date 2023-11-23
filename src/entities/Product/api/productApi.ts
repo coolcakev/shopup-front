@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { baseQueryConfig } from "../../../shared/api/api";
 import { getToken } from '../../Admin/admin.models';
+import {GetAllProductResponse} from "../product.models";
 
 const productConfig = {
     ...baseQueryConfig,
@@ -17,7 +18,7 @@ export const productApi = createApi({
   tagTypes: ['Product'],
   baseQuery: fetchBaseQuery(productConfig),
   endpoints: (builder) => ({
-    getProducts: builder.query<any, void>({
+    getProducts: builder.query<GetAllProductResponse[], void>({
       query: () => ({
         url: '/get/all',
         method: 'GET',

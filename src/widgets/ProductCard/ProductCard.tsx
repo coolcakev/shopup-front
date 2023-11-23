@@ -3,20 +3,20 @@ import './ProductCard.scss';
 import ProductImage from '../../shared/components/Image/ProductImage/ProductImage';
 
 interface PropTypes {
-  images: File[] | string[];
+  image: string;
   name: string;
-  price: string;
+  price: number;
   onDelete: () => void; 
   onEditClick: () => void;
 }
 
 const ProductCard = (props: PropTypes) => {
-  const { images, name, price, onDelete, onEditClick } = props;
+  const { image, name, price, onDelete, onEditClick } = props;
 
   return (
     <div className='product-card'>
       <ProductImage 
-        image={images[0]} 
+        image={image}
         onDelete={onDelete} 
         onEditClick={onEditClick} 
       />
